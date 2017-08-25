@@ -1,10 +1,10 @@
 <md-card>
   <md-card-title>{{title}}</md-card-title>
   <md-card-content>
-    <p>La página que intentas cargar no existe, prueba con estos botones:</p>
+    <p>The page you are trying to load does not exist, try these buttons:</p>
   </md-card-content>
   <md-card-actions>
-    <button md-button>Ver productos</button>
-    <button md-button>Añadir producto</button>
+      <button md-raised-button color="primary" [routerLink]="['/products']">See products</button>
+      <button md-raised-button color="primary" [routerLink]="['/product-add']">Add product</button>
   </md-card-actions>
 </md-card>

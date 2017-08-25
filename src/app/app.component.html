@@ -5,17 +5,12 @@
   </md-toolbar>
 
   <nav md-tab-nav-bar>
-    <a md-tab-link [routerLink]="['/home']" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">Home</a>
-    <a md-tab-link [routerLink]="['/products']" routerLinkActive #rla2="routerLinkActive" [active]="rla2.isActive">Products</a>
-    <a md-tab-link href="#">Create Product</a>
+    <a md-tab-link [routerLink]="['/home']" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive"><md-icon>home</md-icon></a>
+    <a md-tab-link [routerLink]="['/products']" routerLinkActive #rla2="routerLinkActive" [active]="rla2.isActive"><md-icon>list</md-icon></a>
+    <a md-tab-link [routerLink]="['/product-add']" routerLinkActive #rla3="routerLinkActive" [active]="rla3.isActive"><md-icon>add</md-icon></a>
   </nav>
 
   <section>
     <router-outlet></router-outlet>
   </section>
-
-  <footer>
-    <p>Angular course - Jesús Lara</p>
-  </footer>
-
 </div>

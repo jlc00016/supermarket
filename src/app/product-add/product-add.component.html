@@ -1,0 +1,47 @@
+<h2>
+  {{title}}
+</h2>
+
+<form #productForm="ngForm" (ngSubmit)="onSubmit()">
+
+  <div>
+    <md-input-container>
+      <input type="text" #name="ngModel" name="name" [(ngModel)]="product.name" mdInput placeholder="Name" required>
+      <md-error *ngIf="!name.valid && name.touched">
+        Name is required
+      </md-error>
+    </md-input-container>
+  </div>
+
+  <div>
+    <md-input-container>
+      <textarea #description="ngModel" name="description" [(ngModel)]="product.description" mdInput placeholder="Description" required></textarea>
+      <md-error *ngIf="!description.valid && description.touched">
+        Description is required
+      </md-error>
+    </md-input-container>
+  </div>
+
+  <div>
+    <md-input-container>
+      <input type="number" #price="ngModel" name="price" [(ngModel)]="product.price" mdInput placeholder="Price" required>
+      <md-error *ngIf="!price.valid && price.touched">
+        Price is required
+      </md-error>
+    </md-input-container>
+  </div>
+
+  <div>
+    <input type="file" (change)="fileChangeEvent($event)"/>
+    <div *ngIf="product">
+        <img src="http://supermarket-api.local/uploads/images/{{product.image}}" width="200px">
+    </div>
+  </div>
+
+  <br>
+
+  <div>
+    <button md-mini-fab type="submit" [disabled]="!productForm.form.valid"><md-icon>check</md-icon></button>
+  </div>
+
+</form>

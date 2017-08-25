@@ -10,7 +10,7 @@ export class ErrorComponent implements OnInit {
   public title: string;
 
   constructor() {
-    this.title = 'Error!! Página no encontrada';
+    this.title = 'Error!! Page not found';
   }
 
   ngOnInit() {

@@ -1,10 +1,10 @@
 <md-card>
   <md-card-title>{{title}}</md-card-title>
   <md-card-content>
-    <p>Gestiona tus productos con la aplicación web SPA creada con Angular desde cero</p>
+    <p>Manage your products with the SPA web application created with Angular from scratch</p>
   </md-card-content>
   <md-card-actions>
-    <button md-button>Ver productos</button>
-    <button md-button>Añadir producto</button>
+    <button md-raised-button color="primary" [routerLink]="['/products']">See products</button>
+    <button md-raised-button color="primary" [routerLink]="['/product-add']">Add product</button>
   </md-card-actions>
 </md-card>

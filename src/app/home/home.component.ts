@@ -10,7 +10,7 @@ export class HomeComponent implements OnInit {
   public title: string;
 
   constructor() {
-    this.title = 'Webapp de productos con angular 4';
+    this.title = 'Webapp of products with Angular 4';
   }
 
   ngOnInit() {

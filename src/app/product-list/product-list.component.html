@@ -1,3 +1,35 @@
 <h2>
   {{title}}
 </h2>
+
+<div *ngIf="!products">
+  <md-spinner></md-spinner>
+</div>
+
+<div *ngIf="products">
+  <md-grid-list cols="3" rowHeight="3:2">
+    <div *ngFor="let product of products">
+      <md-grid-tile>
+        <md-card>
+          <md-card-header>
+            <span *ngIf="product.image">
+            <img md-card-avatar src="http://supermarket-api.local/uploads/images/{{product.image}}">
+            </span>
+            <md-card-title>{{product.name}}</md-card-title>
+            <md-card-subtitle>{{product.price}} €</md-card-subtitle>
+          </md-card-header>
+          <md-card-actions *ngIf="productIdToDelete != product.id">
+            <button md-raised-button color="primary" [routerLink]="['/product', product.id]">See</button>
+            <button md-raised-button color="accent" [routerLink]="['/product-edit', product.id]">Edit</button>
+            <button md-raised-button color="warn" (click)="setProductIdToDelete(product.id)">Delete</button>
+          </md-card-actions>
+          <md-card-actions *ngIf="productIdToDelete == product.id">
+            <p>¿Are you sure?</p>
+            <button md-raised-button color="primary" (click)="onDeleteProduct(productIdToDelete)">Delete</button>
+            <button md-raised-button color="accent" (click)="setProductIdToDelete(null)">Cancel</button>
+          </md-card-actions>
+        </md-card>
+      </md-grid-tile>
+    </div>
+  </md-grid-list>
+</div>

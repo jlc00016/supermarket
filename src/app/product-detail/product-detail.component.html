@@ -1,0 +1,21 @@
+<h2>
+  Product detail
+</h2>
+
+<div *ngIf="!product">
+  <md-spinner></md-spinner>
+</div>
+
+<div *ngIf="product">
+    <md-card>
+        <md-card-header>
+          <md-card-title>{{product.name}}</md-card-title>
+          <md-card-subtitle>{{product.price}}€</md-card-subtitle>
+        </md-card-header>
+        <img md-card-image src="http://supermarket-api.local/uploads/images/{{product.image}}">
+        <md-card-content>
+          <p>{{product.description}}</p>
+        </md-card-content>
+      </md-card>
+</div>
+
